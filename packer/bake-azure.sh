@@ -35,4 +35,15 @@ yum install -y python-pyasn1 WALinuxAgent
 
 systemctl enable waagent
 
+# cat >> /etc/yum.repos.d/postgres.repo << 'END'
+# [wktaapostgres]
+# name=WktaaPostgres
+# baseurl=https://download.postgresql.org/pub/repos/yum/12/redhat/rhel-7-x86_64/
+# enabled=1
+# gpgcheck=1
+# gpgkey=https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-10
+# END
+
+# yum install -y postgresql12-contrib-12.5 postgresql12-server-12.5
+
 reboot
