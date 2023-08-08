@@ -24,7 +24,7 @@ IMAGE_URL=$(az storage blob url \
                     --name $IMAGE_NAME \
                     --auth-mode key \
                     --account-key $KEY \
-                    --account-name $STORAGE_ACCOUNT -o tsv)    
+                    --account-name $STORAGE_ACCOUNT -o tsv)
 
 az image create \
     -g $RESOURCE_GROUP\
@@ -38,5 +38,6 @@ az vm create \
     --image $MANAGED_IMAGE_NAME \
     --admin-username $VM_USERNAME \
     --admin-password $VM_PASSWORD \
+    --public-ip-sku Standard \
     --boot-diagnostics-storage $STORAGE_ACCOUNT \
     --size $VM_SIZE

@@ -32,6 +32,7 @@ az vm create \
     --admin-username $VM_USERNAME \
     --admin-password $VM_PASSWORD \
     --size $VM_SIZE \
+    --public-ip-sku Standard \
     --custom-data cloud-init-gen.yaml
 
 echo "Inception vm $VM_NAME created. Waiting for cloud init."
