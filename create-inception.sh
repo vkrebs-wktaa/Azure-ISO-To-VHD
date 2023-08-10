@@ -14,7 +14,7 @@ then
     echo "Resource group $RESOURCE_GROUP already exists. Deleting..."
     az group delete --name $RESOURCE_GROUP --yes
 fi
-az group create --name $RESOURCE_GROUP --location $REGION
+az group create --name $RESOURCE_GROUP --location $REGION --tag "description='Created manually from git@github.com:vkrebs-wktaa/Azure-ISO-To-VHD.git'"
 
 echo "Generating cloud init config for vm $VM_NAME"
 #Regenrate cloud init
